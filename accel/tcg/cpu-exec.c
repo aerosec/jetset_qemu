@@ -183,17 +183,11 @@ static inline tcg_target_ulong cpu_tb_exec(CPUState *cpu, TranslationBlock *itb)
 
     cpu->can_do_io = !use_icount;
     uint64_t bp_pc = cpu_get_pc(cpu);
-    // 0x08001e27   CNC
-    // 0x23a5       Console
-    // 0x080041bb   Drone
-    // 0x08008f35   Gateway
-    // 0x816c1      Heat Press
-    // 0x08005f7b   Reflow Oven
-    // 0x08005275   Robot
-    // 0x81605      Steering Control
-    // 0x0800466d   PLC
     //Just print out when we've hit the target for the concrete eval
     if (concrete_target != NULL){
+        if ((strcmp(concrete_target, "cmu900") == 0) && (bp_pc == 0x1033734)){
+            printf("CMU target hit! %lx\n", tbs_execed);
+        }
         if ((strcmp(concrete_target, "cnc") == 0) && ((bp_pc == 0x08001e26) || (bp_pc == 0x08001e27))){
             printf("CNC target hit! %lx\n", tbs_execed);
         }

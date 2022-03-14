@@ -15,7 +15,7 @@ In order to taint variables (in a simplified way), we do two things:
 
 1. Create a synthetic device header file. An example is in `include/hw/misc/simple_synth.h`. Here we've defined a single mmio memory region.
 2. Now instantiate that device. Here, an example is in a corresponding `hw/misc/simple_synth.c` device.
-3. Add this machine class to the compilation sequence. We've added `common-obj-y += simple_synth.o` to `hw/misc/Makefile.objs`.
+3. Add this machine class to the compilation sequence, e.g. `obj-$(CONFIG_SYNTH_CMU900) += cmu900.o` We've added `common-obj-y += simple_synth.o` to `hw/misc/Makefile.objs`.  (You may want to modify `./default-configs`.)
 4. Initialize this class in your CPU machine; for example:
 
 ```

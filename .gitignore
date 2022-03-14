@@ -215,3 +215,4 @@ trace-ust-all.c
 /target/arm/decode-sve.inc.c
 /roms/vgabios
 .gdb_history
+/build

@@ -1,4 +1,6 @@
 common-obj-$(CONFIG_SCRIPTEDIO) += scriptedio.o
+common-obj-$(CONFIG_SYNTH_CMU900) += synth_cmu900.o
+common-obj-$(CONFIG_SYNTH_CMU900_CONCRETE) += synth_cmu900_concrete.o
 common-obj-$(CONFIG_SYNTH_RPI) += synth_rpi.o
 common-obj-$(CONFIG_SYNTH_RPI_CONCRETE) += synth_rpi_concrete.o
 common-obj-$(CONFIG_SYNTH_BEAGLE) += synth_beagle.o
